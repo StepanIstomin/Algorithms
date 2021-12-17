@@ -11,7 +11,8 @@ int main()
     if (n > 1) {
         if (n == 2 || n == 3){}
         else {
-            for (int d = 2;d <= sqrtf(n);d++){
+            int sq = sqrtf(n);
+            for (int d = 2;d <= sq;d++){
                 if(n % d == 0){
                     a = 0;
                     break;

@@ -40,8 +40,18 @@ int task22 (int a, int b) {
 int task3 (int field[SIZE_X][SIZE_Y], int x, int y){
     if (x == 0 && y == 0 || field[x][y] == 1)
         return 0;
-    else if (x == 0 ^ y == 0)
-        return 1;
+    else if (x == 0) {
+        if (task3(field,x,y-1) == 0 && y != 1)
+            return 0;
+        else
+            return 1;
+    }
+    else if (y == 0) {
+         if (task3(field,x-1,y) == 0 && x != 1)
+            return 0;
+        else
+            return 1;
+    }
     else
         return task3(field,x,y-1) + task3(field,x-1,y);
 }
@@ -67,6 +77,7 @@ int main()
     printf("\n%d^%d = %d\n",a,b,task22(a,b));
     //task 3
     int field[SIZE_X][SIZE_Y] = {0};
+    field[4][0] = 1;
     field[3][2] = 1;
     field[6][6] = 1;
     for (int y = 0; y < SIZE_Y; y++){
