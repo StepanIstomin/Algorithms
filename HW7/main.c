@@ -119,11 +119,7 @@ void bucketSortEven(int* arr, int len){
             if (arr[i]%2 == 0) { // even check
                 int d = (arr[i]/digit)%b;
                 buckets[d][buckets[d][max]++] = arr[i];
-                //printf("\n%d %d %d",arr[i], i, buckets[b][max]); //temp
                 buckets[b][buckets[b][max]++] = i; //  write the indices of the even values of the array
-                //buckets[b][buckets[b][max]] = i; //  temp
-                //printf(" %d",buckets[b][buckets[b][max]]); //temp
-                //buckets[b][max]++;// temp
             }
         }
         int idx = 0;
