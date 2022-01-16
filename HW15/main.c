@@ -6,7 +6,6 @@ int hashString (char *str) {
     int i = 0;
     while (str[i]){
         sum += str[i++];
-        //printf("Sum: %d\n", sum);
     }
     return sum;
 }
@@ -27,7 +26,6 @@ void coinsSum (int sum, int *coins, int lenght){
             coinsCount += sum / coins[j];
         }
         sum = sum % coins[j];
-        //printf ("Sum: %d\n", sum);
     }
     if (!coinsCount)
         printf("The number of coins cannot be found");
