@@ -35,8 +35,12 @@ void permEncr(char *str, char *encrStr, int key){
     while (str[i++]) {
         strLenght++;
     }
+    if (key == 0){
+        printf("Error: key is null\n");
+        return;
+    }
     if (key >= strLenght){
-        printf("your key is to long");
+        printf("Error: key is to long\n");
         return;
     }
     i = 0;//encrypted array indexes
@@ -49,6 +53,10 @@ void permEncr(char *str, char *encrStr, int key){
     }
 }
 void permDecr(char *str, char *encrStr, int key){
+    if (key == 0){
+        printf("Error: key is null\n");
+        return;
+    }
     int strLenght = 0;
     int i = 0;
     while (encrStr[i++]) {
